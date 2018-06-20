@@ -2,7 +2,7 @@
 
 @implementation NSString (IcelandicConverter)
 
-- (NSString *)returnFormattedStringBy:(NSString *)input {
++ (NSString *)returnFormattedStringBy:(NSString *)input {
     
     NSMutableString *result = [NSMutableString string];
     
@@ -36,7 +36,12 @@
         NSRange range = NSMakeRange(index - removedOddCharacters, 2);
         [result deleteCharactersInRange:range];
         
+        NSLog(@"[NSString returnFormattedStringBy] odd character: %c", character);
+        
         switch (character) {
+            case '\201':
+                [result insertString:@"Á" atIndex:index - removedOddCharacters];
+                break;
             case '\241':
                 [result insertString:@"á" atIndex:index - removedOddCharacters];
                 break;
@@ -46,17 +51,26 @@
             case '\251':
                 [result insertString:@"é" atIndex:index - removedOddCharacters];
                 break;
+            case '\215':
+                [result insertString:@"Í" atIndex:index - removedOddCharacters];
+                break;
             case '\255':
                 [result insertString:@"í" atIndex:index - removedOddCharacters];
                 break;
             case '\263':
                 [result insertString:@"ó" atIndex:index - removedOddCharacters];
                 break;
+            case '\232':
+                [result insertString:@"Ú" atIndex:index - removedOddCharacters];
+                break;
             case '\272':
                 [result insertString:@"ú" atIndex:index - removedOddCharacters];
                 break;
             case '\275':
                 [result insertString:@"ý" atIndex:index - removedOddCharacters];
+                break;
+            case '\236':
+                [result insertString:@"Þ" atIndex:index - removedOddCharacters];
                 break;
             case '\276':
                 [result insertString:@"þ" atIndex:index - removedOddCharacters];

@@ -4,7 +4,7 @@
 A little extension for NSString to deal with non-ASCII symbols. Adopted for lowercased Icelandic letters.
 
 ### The letters the extension works with
-`á`, `ð`, `é`, `í`, `ó`, `ú`, `ý`, `þ`, `æ`, `ö`.
+`Á`, `á`, `ð`, `é`, `Í`, `í`, `ó`, `Ú`, `ú`, `ý`, `Þ`, `þ`, `æ`, `ö`.
 
 ### Example
 **Input:**
